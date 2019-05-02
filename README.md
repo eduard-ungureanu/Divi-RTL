@@ -21,3 +21,5 @@ if (is_rtl()){
     add_action( 'get_footer', 'dt_load_rtl_styles' );
 }
 ```
+
+*Note: If you want you can use the minified version, just don't forget to update the PHP code in order to load the minified version*

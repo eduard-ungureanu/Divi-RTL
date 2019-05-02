@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="divi-rtl">Divi-RTL</h1>
+
+<p>Fixing column structure when RTL Langauge it is used.</p>
+
+<h2 id="howtouseit">How to use it</h2>
+
+<h3 id="1.directlyintodivi">1. Directly into Divi</h3>
+
+<p>You can copy the CSS code from <code>dt-rtl.css</code> file directly into Divi ➤ Theme Options ➤ Custom CSS</p>
+
+<h3 id="2.unsingachildtheme">2. Unsing a child theme</h3>
+
+<p>If you already have a child theme installed, then in your child theme folder create a new folder called <strong>css</strong></p>
+
+<p>In the <strong>css</strong> folder create a new CSS file called <code>dt-rtl.css</code> and put the code from this Git</p>
+
+<p>In <code>functions.php</code> of your child theme add this PHP code:</p>
+
+<pre><code>function dt_load_rtl_styles(){
+    wp_enqueue_style( 'dt-rtl-columns-fix', get_stylesheet_directory_uri() . '/css/dt-rtl.css' );
+}
+
+if (is_rtl()){
+    add_action( 'get_footer', 'dt_load_rtl_styles' );
+}
+</code></pre>
+
+<p><em>Note: If you want you can use the minified version, just don&#8217;t forget to update the PHP code in order to load the minified version</em></p>
+
+</body>
+</html>
+
